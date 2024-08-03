@@ -13,5 +13,5 @@ RUN dotnet restore
 RUN dotnet publish -o publish
 
 WORKDIR /app/publish
-
+ENV ASPNETCORE_URLS=http://+:80
 CMD ["./JournalApp"]
