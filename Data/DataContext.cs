@@ -1,5 +1,5 @@
-using System.Data.Common;
 using JournalApp.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace JournalApp.Data;
 

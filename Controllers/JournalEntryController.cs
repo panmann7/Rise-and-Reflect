@@ -13,9 +13,9 @@ public class JournalEntryController : ControllerBase
     {
         var entries = new List<JournalEntry> {
             new JournalEntry {
-                Date = "05-02-2024",
-                Time = "3:39pm",
-                Entry = "Good morning world"
+                EntryId = 1,
+                Date = "3:39pm",
+                EntryBody = "Good morning world"
             }
         };
 
