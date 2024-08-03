@@ -8,14 +8,33 @@ const AppRoutes = [
     element: <Home />
   },
   {
-    path: '/counter',
+    path: '/journal-entries/:entryId',
     element: <Counter />
   },
   {
-    path: '/fetch-data',
+    path: '/journal-entries/:entryId/edit',
     element: <FetchData />
+  },
+  {
+    path: 'journal-entries/:entryId/delete',
+    element: ""
   }
 ];
+
+// const AppRoutes = [
+//   {
+//     index: true,
+//     element: <Home />
+//   },
+//   {
+//     path: '/counter',
+//     element: <Counter />
+//   },
+//   {
+//     path: '/fetch-data',
+//     element: <FetchData />
+//   }
+// ];
 
 
 export default AppRoutes;
