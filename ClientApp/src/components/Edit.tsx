@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import Button from "@mui/material/Button";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import { styled, TextareaAutosize, TextField } from "@mui/material";
-import { useNavigate } from "react-router-dom";
 
 const Textarea = styled(TextareaAutosize)(
   ({ theme }) => `
@@ -28,7 +27,6 @@ const Edit = () => {
     getJournals();
   }, []);
 
-  const navigate = useNavigate();
   const [entryId, setEntryId] = useState("");
   const [journalEntry, setJournalEntry] = useState("");
 
