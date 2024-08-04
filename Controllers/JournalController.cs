@@ -20,15 +20,6 @@ public class JournalController : ControllerBase
     public async Task<ActionResult<List<JournalEntry>>> GetAllEntries()
     {
          var entries = await _context.JournalEntries.ToListAsync();
-
-        // var entries = new List<JournalEntry> {
-        //     new JournalEntry {
-        //         EntryId = 1,
-        //         Date = "3:39pm",
-        //         EntryBody = "Good morning world"
-        //     }
-        // };
-
         return Ok(entries);
     }
 
@@ -39,8 +30,6 @@ public class JournalController : ControllerBase
 
         if (entry is null) 
                 return NotFound("Entry not found.");
-
-            // return BadRequest("Entry not found.");
 
         return Ok(entry);
     }
@@ -59,7 +48,6 @@ public class JournalController : ControllerBase
     [HttpPut]
     public async Task<ActionResult> UpdateEntry(JournalEntry updatedEntry)
     {
-        // shouldn't actually return list - return msg like success, as database can be large
         var dbEntry = await _context.JournalEntries.FindAsync(updatedEntry.EntryId);
 
         if (dbEntry is null) 
