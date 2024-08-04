@@ -4,6 +4,7 @@ import { Layout } from "./components/Layout";
 import { Home } from "./components/Home";
 import axios from "axios";
 import { History } from "./components/History";
+import { Edit } from "./components/Edit";
 import { NewEntry } from "./components/NewEntry";
 
 import "./custom.css";
@@ -23,6 +24,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/new-entry" element={<NewEntry />} />
+        <Route path="/edit" element={<Edit />} />
         <Route path="/history" element={<History />} />
       </Routes>
     </Layout>

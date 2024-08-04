@@ -57,7 +57,7 @@ public class JournalController : ControllerBase
 
 
     [HttpPut]
-    public async Task<ActionResult<List<JournalEntry>>> UpdateEntry(JournalEntry updatedEntry)
+    public async Task<ActionResult> UpdateEntry(JournalEntry updatedEntry)
     {
         // shouldn't actually return list - return msg like success, as database can be large
         var dbEntry = await _context.JournalEntries.FindAsync(updatedEntry.EntryId);
@@ -70,7 +70,8 @@ public class JournalController : ControllerBase
 
         await _context.SaveChangesAsync();
 
-        return Ok(await _context.JournalEntries.ToListAsync());
+        return Ok();
+
     }
 
 

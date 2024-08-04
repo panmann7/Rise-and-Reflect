@@ -1,6 +1,7 @@
 import { Home } from "./components/Home";
 import { NewEntry } from "./components/NewEntry";
 import { History } from "./components/History";
+import { Edit } from "./components/Edit";
 
 const AppRoutes = [
   {
@@ -10,6 +11,10 @@ const AppRoutes = [
   {
     path: "/new-entry",
     element: <NewEntry />,
+  },
+  {
+    path: "/edit",
+    element: <Edit />,
   },
   {
     path: "/history",

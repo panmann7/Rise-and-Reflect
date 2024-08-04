@@ -43,6 +43,11 @@ const NavMenu = () => {
                 </NavLink>
               </NavItem>
               <NavItem>
+                <NavLink tag={Link} to="/edit">
+                  Edit
+                </NavLink>
+              </NavItem>
+              <NavItem>
                 <NavLink tag={Link} to="/history">
                   History
                 </NavLink>

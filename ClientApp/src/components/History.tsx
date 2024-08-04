@@ -29,8 +29,8 @@ const History = () => {
   return (
     <div className="history-pg-components">
       <br></br>
-      <h1>Past journal entries</h1>
-      <p>Select an entry to edit:</p>
+      <h1>Delete an entry:</h1>
+      <br></br>
       <TextField
         label="Type entry no., (e.g. 2)"
         variant="outlined"
@@ -40,24 +40,6 @@ const History = () => {
       <br></br>
       <div className="entry-buttons">
         <ButtonGroup variant="contained">
-          <Button type="submit">Update</Button>
-          <Button onClick={onDeleteButtonClick} type="submit">
-            Delete
-          </Button>
-        </ButtonGroup>
-      </div>
-      <br></br> <br></br>
-      <p>Select an entry to delete:</p>
-      <TextField
-        label="Type entry no., (e.g. 2)"
-        variant="outlined"
-        value={entryId}
-        onChange={(e) => setId(e.target.value)}
-      />
-      <br></br>
-      <div className="entry-buttons">
-        <ButtonGroup variant="contained">
-          <Button type="submit">Update</Button>
           <Button onClick={onDeleteButtonClick} type="submit">
             Delete
           </Button>
