@@ -31,3 +31,48 @@ h1 {
   font-family: "Lora";
   size: 3em;
 }
+
+.new-entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.entry-form-components {
+  display: flex;
+}
+
+.entry-form-components > span {
+  width: 8rem;
+}
+
+.user-inputs {
+  flex-grow: 3;
+  border: 1px solid #9ab3bd;
+  border-radius: 0.3rem;
+  padding: 0.4rem;
+}
+
+.user-inputs:focus {
+  border-color: #9ab3bd;
+  outline: none;
+}
+
+.entry-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+button {
+  background-color: #8abbca;
+  color: white;
+  border: none;
+  border-radius: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #6a9abc;
+}

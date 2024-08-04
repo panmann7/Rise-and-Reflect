@@ -18,14 +18,13 @@ const NewEntry = () => {
       <br></br>
       <h1>Let's get started :)</h1>
       <br></br>
-      <p>[journal entry layout here]</p>
 
       <form method="post" className="new-entry-form">
-        <p>
+        <p className="entry-form-components">
           <span>Date</span>
           <input
+            className="user-inputs"
             placeholder="DD-MM-YYY"
-            aria-label="Date"
             type="text"
             name="date"
             defaultValue={"DD-MM-YYYY"}
@@ -33,18 +32,19 @@ const NewEntry = () => {
           />
         </p>
 
-        <p>
+        <p className="entry-form-components">
           <span>Journal Entry</span>
           <textarea
+            className="user-inputs"
             placeholder="Start your entry here..."
             name="journal-entry"
             defaultValue={""}
             // defaultValue={entry?.entryBody || ""}
-            rows={7}
+            rows={10}
           />
         </p>
 
-        <p>
+        <div className="entry-buttons">
           <button type="submit">Save</button>
           <button type="reset">Restart</button>
           <button
@@ -55,7 +55,7 @@ const NewEntry = () => {
           >
             Cancel
           </button>
-        </p>
+        </div>
       </form>
     </div>
   );
