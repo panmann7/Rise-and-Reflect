@@ -5,6 +5,8 @@ const History = () => {
     <div>
       <br></br>
       <h1>Past journal entries</h1>
+      <br></br>
+      <p>[journal entries here]</p>
     </div>
   );
 };

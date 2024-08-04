@@ -39,7 +39,7 @@ const NavMenu = () => {
               </NavItem>
               <NavItem>
                 <NavLink tag={Link} to="/new-entry">
-                  New Entry
+                  New
                 </NavLink>
               </NavItem>
               <NavItem>
