@@ -32,7 +32,8 @@ h1 {
   size: 3em;
 }
 
-.new-entry-form {
+.new-entry-form,
+.history-pg-components {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;

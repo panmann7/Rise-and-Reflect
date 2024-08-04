@@ -75,10 +75,9 @@ public class JournalController : ControllerBase
 
 
 
-    [HttpDelete]
-    public async Task<ActionResult<List<JournalEntry>>> DeleteEntry(int EntryId)
+    [HttpDelete("{EntryId}")]
+    public async Task<ActionResult> DeleteEntry(int EntryId)
     {
-        // shouldn't actually return list - return msg like success, as database can be large
         var dbEntry = await _context.JournalEntries.FindAsync(EntryId);
 
         if (dbEntry is null) 
@@ -87,7 +86,7 @@ public class JournalController : ControllerBase
         _context.JournalEntries.Remove(dbEntry);
         await _context.SaveChangesAsync();
 
-        return Ok(await _context.JournalEntries.ToListAsync());
+        return Ok();
     }
 
 
