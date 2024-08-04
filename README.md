@@ -6,19 +6,19 @@ One thing I've very proud of in this project is implementing the back-end. Azure
 Features I've implemented:
 
 Frontend:
-React using Typescript
-Styling using MUI
-Visually appealing and responsive UI
-Using react router
+React using Typescript, 
+Styling using MUI, 
+Visually appealing and responsive UI, 
+Using react router,
 Git usage
 
 Backend:
-Built using C# using .NET8
-Using Microsoft Entity Framework Core
-Using a MySQL database
+Built using C# using .NET8,
+Using Microsoft Entity Framework Core,
+Using a MySQL database,
 Has the CRUD operations: create, read, update, and delete
 
 Advanced features:
-The switching of theme from light to dark
-Containerized project using docker
+The switching of theme from light to dark,
+Containerized project using docker,
 Deployed using Azure
