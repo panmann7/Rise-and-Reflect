@@ -5,20 +5,16 @@ import { Home } from "./components/Home";
 const AppRoutes = [
   {
     index: true,
-    element: <Home />
+    element: <Home />,
   },
   {
-    path: '/journal-entries/:entryId',
-    element: <Counter />
+    path: "//new-entry",
+    element: <NewEntry />,
   },
   {
-    path: '/journal-entries/:entryId/edit',
-    element: <FetchData />
+    path: "/history",
+    element: <History />,
   },
-  {
-    path: 'journal-entries/:entryId/delete',
-    element: ""
-  }
 ];
 
 // const AppRoutes = [
@@ -35,6 +31,5 @@ const AppRoutes = [
 //     element: <FetchData />
 //   }
 // ];
-
 
 export default AppRoutes;

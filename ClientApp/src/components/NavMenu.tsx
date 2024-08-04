@@ -22,8 +22,8 @@ const NavMenu = () => {
         light
       >
         <Container>
-          <NavbarBrand tag={Link} to="/">
-            CSharpReactTypeScript
+          <NavbarBrand tag={Link} to="/" className="site-name">
+            Rise & Reflect
           </NavbarBrand>
           <NavbarToggler onClick={toggleNavbar} className="mr-2" />
           <Collapse
@@ -33,18 +33,18 @@ const NavMenu = () => {
           >
             <ul className="navbar-nav flex-grow">
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/">
+                <NavLink tag={Link} to="/">
                   Home
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/counter">
-                  Counter
+                <NavLink tag={Link} to="/new-entry">
+                  New Entry
                 </NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={Link} className="text-dark" to="/fetch-data">
-                  Fetch data
+                <NavLink tag={Link} to="/history">
+                  History
                 </NavLink>
               </NavItem>
             </ul>
