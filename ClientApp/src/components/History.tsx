@@ -14,7 +14,7 @@ const History = () => {
   return (
     <div>
       <br></br>
-      <h1>Past journal entries</h1>
+      <h1>View past journal entries</h1>
       <br></br>
       {journals.map((journal) => {
         return <p>{journal["entryBody"]}</p>;

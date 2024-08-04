@@ -1,85 +1,90 @@
 import React, { useState } from "react";
 import "../custom.css";
-import { useLoaderData, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
+import ButtonGroup from "@mui/material/ButtonGroup";
+import { TextareaAutosize } from "@mui/base/TextareaAutosize";
+import { styled } from "@mui/system";
+
 import axios from "axios";
 
-// interface EntryData {
-//   entry: {
-//     date?: string;
-//     entryBody?: string;
-//   };
-// }
+const Textarea = styled(TextareaAutosize)(
+  ({ theme }) => `
+    borderRadius: "4px",
+    border: 1px solid #ccc,
+    font-family: 'IBM Plex Sans', sans-serif;
+    line-height: 1.5;
+    padding: 1rem;
+    border: 1px solid
+    
+  `
+);
 
 const NewEntry = () => {
-  //   const { entry } = useLoaderData() as EntryData;
   const navigate = useNavigate();
+  const [date, setDate] = useState("");
   const [journalEntry, setJournalEntry] = useState("");
 
   async function onButtonClick() {
     const journalData = journalEntry;
+    const journalDate = date;
     console.log(journalData);
+    console.log(journalDate);
+
     const response = await axios.post("/api/journal", {
+      Date: journalDate,
       EntryBody: journalData,
     });
     console.log(response);
   }
 
   return (
-    <div>
+    <div className="new-entry-form">
       <br></br>
-      <h1>Let's get started :)</h1>
+      <h1>Enter your journal here :)</h1>
       <br></br>
 
       <TextField
-        id="outlined-basic"
-        label="Outlined"
+        label="Date"
         variant="outlined"
+        value={date}
+        onChange={(e) => setDate(e.target.value)}
+      />
+
+      <br></br>
+      <Textarea
+        minRows={10}
+        placeholder="Start entry here..."
         value={journalEntry}
         onChange={(e) => setJournalEntry(e.target.value)}
       />
-      <Button variant="outlined" onClick={onButtonClick}>
-        Outlined
-      </Button>
-      <form method="post" className="new-entry-form">
-        <p className="entry-form-components">
-          <span>Date</span>
-          <input
-            className="user-inputs"
-            placeholder="DD-MM-YYY"
-            type="text"
-            name="date"
-            defaultValue={"DD-MM-YYYY"}
-            // defaultValue={entry?.date || "DD-MM-YYYY"}
-          />
-        </p>
 
-        <p className="entry-form-components">
-          <span>Journal Entry</span>
-          <textarea
-            className="user-inputs"
-            placeholder="Start your entry here..."
-            name="journal-entry"
-            defaultValue={""}
-            // defaultValue={entry?.entryBody || ""}
-            rows={10}
-          />
-        </p>
-
-        <div className="entry-buttons">
-          <button type="submit">Save</button>
-          <button type="reset">Restart</button>
-          <button
+      <br></br>
+      <div className="entry-buttons">
+        <ButtonGroup variant="contained">
+          <Button onClick={onButtonClick} type="submit">
+            Save
+          </Button>
+          <Button
+            type="reset"
+            onClick={() => {
+              setDate("");
+              setJournalEntry("");
+            }}
+          >
+            Restart
+          </Button>{" "}
+          <Button
             type="button"
             onClick={() => {
               navigate(-1);
             }}
           >
             Cancel
-          </button>
-        </div>
-      </form>
+          </Button>
+        </ButtonGroup>
+      </div>
     </div>
   );
 };
