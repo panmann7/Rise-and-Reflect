@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using Microsoft.EntityFrameworkCore;
 using JournalApp.Data;
 using JournalApp.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -6,12 +6,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace JournalApp.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
-public class JournalEntryController : ControllerBase
+[Route("/api/journal")]
+public class JournalController : ControllerBase
 {
     private readonly DataContext _context;
 
-    public JournalEntryController(DataContext context) {
+    public JournalController(DataContext context) {
         _context = context;
 
     }
@@ -47,12 +47,12 @@ public class JournalEntryController : ControllerBase
 
 
     [HttpPost]
-    public async Task<ActionResult<List<JournalEntry>>> AddEntry(JournalEntry entry)
+    public async Task<ActionResult> AddEntry(JournalEntry entry)
     {
         _context.JournalEntries.Add(entry);
         await _context.SaveChangesAsync();
 
-        return Ok(await _context.JournalEntries.ToListAsync());
+        return Created();
     }
 
 

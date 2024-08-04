@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../custom.css";
 import { useLoaderData, useNavigate } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import axios from "axios";
 
 // interface EntryData {
 //   entry: {
@@ -12,6 +15,16 @@ import { useLoaderData, useNavigate } from "react-router-dom";
 const NewEntry = () => {
   //   const { entry } = useLoaderData() as EntryData;
   const navigate = useNavigate();
+  const [journalEntry, setJournalEntry] = useState("");
+
+  async function onButtonClick() {
+    const journalData = journalEntry;
+    console.log(journalData);
+    const response = await axios.post("/api/journal", {
+      EntryBody: journalData,
+    });
+    console.log(response);
+  }
 
   return (
     <div>
@@ -19,6 +32,16 @@ const NewEntry = () => {
       <h1>Let's get started :)</h1>
       <br></br>
 
+      <TextField
+        id="outlined-basic"
+        label="Outlined"
+        variant="outlined"
+        value={journalEntry}
+        onChange={(e) => setJournalEntry(e.target.value)}
+      />
+      <Button variant="outlined" onClick={onButtonClick}>
+        Outlined
+      </Button>
       <form method="post" className="new-entry-form">
         <p className="entry-form-components">
           <span>Date</span>
